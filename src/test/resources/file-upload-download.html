@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STQA Practical 14 - File Upload and Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6f8;
+        }
+
+        h1 {
+            color: #243b55;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        button, a {
+            margin-top: 10px;
+        }
+
+        #uploadStatus {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>File Upload and Download Automation</h1>
+
+    <div class="section">
+        <h2>File Upload</h2>
+
+        <input type="file" id="fileInput">
+
+        <button id="uploadButton" onclick="uploadFile()">
+            Upload File
+        </button>
+
+        <p id="uploadStatus"></p>
+    </div>
+
+    <div class="section">
+        <h2>File Download</h2>
+
+        <a id="downloadLink"
+           href="download-files/sample-download.txt"
+           download="sample-download.txt">
+            Download Sample File
+        </a>
+    </div>
+
+    <script>
+        function uploadFile() {
+            const input = document.getElementById("fileInput");
+            const status = document.getElementById("uploadStatus");
+
+            if (input.files.length === 0) {
+                status.style.color = "red";
+                status.textContent = "Please select a file.";
+                return;
+            }
+
+            status.style.color = "green";
+            status.textContent =
+                "File uploaded successfully: " + input.files[0].name;
+        }
+    </script>
+
+</body>
+</html>

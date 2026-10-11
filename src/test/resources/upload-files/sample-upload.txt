@@ -1,0 +1,3 @@
+STQA Practical 14 - File Upload and Download Automation
+
+This is a sample text file used to test file upload functionality using Selenium WebDriver.
