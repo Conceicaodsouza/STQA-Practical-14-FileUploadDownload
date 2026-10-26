@@ -82,19 +82,8 @@ public class FileUploadDownloadTest {
 
         System.out.println("Starting file upload test...");
 
-        File uploadFile = Paths.get(
-                "src", "test", "resources",
-                "upload-files", "sample-upload.txt"
-        ).toAbsolutePath().toFile();
-
-        assertTrue("Sample upload file must exist.",
-                uploadFile.exists());
-
-        driver.findElement(By.id("fileInput"))
-                .sendKeys(uploadFile.getAbsolutePath());
-
-        driver.findElement(By.id("uploadButton")).click();
-
+       //STUDENT TASK 1
+        
         WebDriverWait wait = new WebDriverWait(
                 driver, Duration.ofSeconds(10));
 
@@ -118,8 +107,8 @@ public class FileUploadDownloadTest {
 
         System.out.println("Starting file download test...");
 
-        driver.findElement(By.id("downloadLink")).click();
-
+       //STUDENT TASK 2
+        
         Path downloadedFile = downloadDirectory.resolve(
                 "sample-download.txt");
 
@@ -173,14 +162,8 @@ public class FileUploadDownloadTest {
             return;
         }
 
-        Robot robot = new Robot();
-        robot.setAutoDelay(200);
-
-        robot.keyPress(KeyEvent.VK_SHIFT);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_SHIFT);
-
+       //Student task 3
+           
         System.out.println(
                 "PASS: Robot keyboard simulation executed.");
     }
